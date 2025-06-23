@@ -17,7 +17,6 @@ tail -n +2 "$filename" | cut -d '|' -f4 | sed 's/\.0//' | sort | uniq | wc -l >>
 echo "Number of duplicated MSISDN" >> "$output_file"
 tail -n +2 "$filename" | cut -d '|' -f4 | sed 's/\.0//' | sort | uniq -d | wc -l >> "$output_file"
 
-echo "Non Airtel number" >> "$output_file"
 tail -n +2 "$filename" | cut -d '|' -f4 | sed 's/\.0//' | grep -vE '^7[0-9]{8}$' | wc -l >> "$output_file"
 
 # Invalid Balance records
